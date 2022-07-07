@@ -1,5 +1,8 @@
-----Total Cases/Deaths per continent and country 
+/* The analysis is based on the dataset taken from https://ourworldindata.org/covid-deaths and are only as of 30/04/2021. These numbers are not live numbers */ 
 
+
+
+----Total infected cases/Deaths per continent and country. Here I have convered total_deaths to int as the source data was NVarchar ----
 SELECT [Continent]
 	, [Location]
 	, MAX([population]) AS Population
@@ -10,7 +13,7 @@ WHERE continent is not null
 GROUP BY [continent], [location]
 ORDER BY 1,2
 
----Total Covid per continent ---
+---Covid cases by continents---
 SELECT [continent]
 		,MAX([total_cases]) AS TotalCases
 FROM [PortfolioProject].[dbo].[CovidDeaths]
